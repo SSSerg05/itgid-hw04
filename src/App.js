@@ -8,10 +8,12 @@ function App() {
   const selectRef = React.createRef();
   const blockRef7 = React.createRef();
   const inputRef8 = React.createRef();
+  const inputRef10 = React.createRef();
 
   const [selectOut, setSelectOut] = useState('');
   const [bgcBlock, setBgcBlock] = useState({r:0, g:0, b:0});
   const [out8, setOut8] = useState('');
+  const [out9, setOut9] = useState(0);
 
   function task1() {
     console.log('task2');
@@ -80,13 +82,21 @@ function App() {
     setOut8((r) => r + rest);
   }
 
-  // function task9() {
+  function task9(e) {
+    const val = e.target.value;
+    setOut9(val);
+  }
 
-  // }
-  // let ar10 = [5, 6, 7];
-  // function task10() {
+  let ar10 = [5, 6, 7];
+  function task10() {
+    const val = inputRef10.current.value.trim();
+    if (val === '') {
+      return
+    }
 
-  // }
+    ar10.push(+val);
+    console.log(ar10);
+  }
 
   return (
     <>
@@ -142,14 +152,14 @@ function App() {
 
       <section>
         <h2>Task 9</h2>
-        <input type="range" className="task-9"></input>
-        <div className="out-9"></div>
+        <input type="range" className="task-9" onInput={task9}></input>
+        <div className="out-9">{out9}</div>
       </section>
 
       <section>
         <h2>Task 10</h2>
-        <input type="number" className="i-10"></input>
-        <button className="task-10">Push</button>
+        <input type="number" className="i-10" ref={inputRef10}></input>
+        <button className="task-10" onClick={task10}>Push</button>
       </section>
     </>
   );
