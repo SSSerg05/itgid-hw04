@@ -93,7 +93,8 @@ function App() {
     }
 
     ar10.push(+val);
-    console.log('task10',ar10);
+    inputRef10.current.value = '';
+    console.log('task10', ar10);
   }
 
   return (
