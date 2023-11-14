@@ -21,19 +21,17 @@ function App() {
 
   function task2() {
     const t2 = document.querySelector('.task-2');
-    console.log(t2);
     t2.classList.add('active')
   }
 
   function task3(e) {
     const val = e.target.value;
-    console.log(val);
-
+    console.log('task3',val);
   }
 
   function task4() {
     count4++;
-    console.log(count4);
+    console.log('task4',count4);
   }
   
   function task5(e) {
@@ -95,7 +93,7 @@ function App() {
     }
 
     ar10.push(+val);
-    console.log(ar10);
+    console.log('task10',ar10);
   }
 
   return (
